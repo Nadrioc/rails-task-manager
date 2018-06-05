@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="top-of-page">
+    <h1><%= @task.title %></h1>
+      <%= link_to task_edit_path, class: "btn-grey link" do %>
+        <i class="fas fa-edit"></i> Edit this task
+      <% end %>
+
+  </div>
+
+  <div class="grey-box">
+    <%= @task.details %>
+  </div>
+  <label for="check">This task is not completed yet</label>
+  <% if @task.completed %>
+    <input id="check" type="checkbox" disabled checked>
+  <% else %>
+    <input id="check" type="checkbox" disabled>
+  <% end %>
+  <div class="border-grey-top">
+    <%= link_to "Back to List", tasks_path %>
+  </div>
+</div>
